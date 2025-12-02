@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom's Portfolio</title>
+    <style>
+        /* ====== リセット ====== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* ====== コンテナ ====== */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        /* ====== ヘッダー ====== */
+        header {
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            display: inline-block;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        header nav {
+            float: right;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #007bff;
+        }
+
+        /* ====== セクション ====== */
+        section {
+            padding: 80px 0;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* ====== スキル・職歴リスト ====== */
+        .skill-list,
+        .career-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            list-style: none;
+        }
+
+        .skill-list li,
+        .career-list li {
+            padding: 10px 20px;
+            background: #f5f5f5;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        /* ====== 作品集 ====== */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .work-item {
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .work-item img {
+            width: 100%;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .work-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ====== 抱負 ====== */
+        #goal p {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* ====== フッター ====== */
+        footer {
+            background: #f5f5f5;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        /* ====== フェードインアニメーション ====== */
+        .fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ====== レスポンシブ ====== */
+        @media (max-width: 768px) {
+            header nav {
+                float: none;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="container">
+            <h1>Tom's Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#career">Career</a></li>
+                    <li><a href="#works">Works</a></li>
+                    <li><a href="#goal">Goal</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 自己紹介 -->
+    <section id="about" class="fade">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Tomと申します。Web制作とデザインを学びながら、シンプルで見やすいサイト作りを心がけています。</p>
+        </div>
+    </section>
+
+    <!-- スキル -->
+    <section id="skills" class="fade">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul class="skill-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Photoshop</li>
+                <li>Illustrator</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 職歴 -->
+    <section id="career" class="fade">
+        <div class="container">
+            <h2>Career</h2>
+            <ul class="career-list">
+                <li>Office Secretary</li>
+                <li>Accessory Design</li>
+                <li>Web Planning</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 作品集 -->
+    <section id="works" class="fade">
+        <div class="container">
+            <h2>Works</h2>
+            <div class="works-grid">
+                <div class="work-item">
+                    <img src="https://via.placeholder.com/400x250.png?text=Portfolio+Site" alt="Portfolio Site">
+                    <h3>Portfolio Site</h3>
+                    <p>今回制作したポートフォリオサイトの仮作品です。</p>
+                </div>
+                <div class="work-item">
+                    <img src="https://via.placeholder.com/400x250.png?text=Simple+Landing+Page" alt="Simple Landing Page">
+                    <h3>Simple Landing Page</h3>
+                    <p>練習用に作成したシンプルなランディングページです。</p>
+                </div>
+                <div class="work-item">
+                    <img src="https://via.placeholder.com/400x250.png?text=Accessory+Brand+Concept+Site" alt="Accessory Brand Concept Site">
+                    <h3>Accessory Brand Concept Site</h3>
+                    <p>アクセサリーブランドを想定した仮のコンセプトサイトです。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 抱負 -->
+    <section id="goal" class="fade">
+        <div class="container">
+            <h2>Goal</h2>
+            <p>自分のスキルや作品を分かりやすく伝えられるよう、見やすさと使いやすさを重視したポートフォリオサイトを制作していきます。</p>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Tom's Portfolio</p>
+        </div>
+    </footer>
+
+    <script>
+        // スクロール時にセクションをフェードイン
+        const sections = document.querySelectorAll("section");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => {
+            section.classList.add("fade");
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
